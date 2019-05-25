@@ -27,33 +27,7 @@ public class SensorActivity extends AppCompatActivity {
         left= (ImageView)findViewById(R.id.arrowLeft);
         right =(ImageView)findViewById(R.id.arrowRight);
 
-        up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-
-        down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        left.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        right.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                
-            }
-        });
 
     }
 }

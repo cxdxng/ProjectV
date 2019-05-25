@@ -3,6 +3,7 @@ package com.example.marlonscheer.projectv;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -35,6 +36,7 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -65,8 +67,22 @@ public class HomeActivity extends AppCompatActivity {
 
         wv.loadUrl("http://192.168.88.89/cam");
 
+        wv.setScrollContainer(true);
 
-        wv.setScrollContainer(false);
+//Only hide the scrollbar, not disables the scrolling:
+        wv.setVerticalScrollBarEnabled(false);
+       // wv.setHorizontalScrollBarEnabled(true);
+
+//Only disabled the horizontal scrolling:
+      //  wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+
+//To disabled the horizontal and vertical scrolling:
+       wv.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return (event.getAction() == MotionEvent.ACTION_MOVE);
+            }
+        });
+
 
         RelativeLayout v = (RelativeLayout)  findViewById(R.id.nav);
 
@@ -101,19 +117,19 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "UP", Snackbar.LENGTH_LONG);
                 snackbar.show();
-            }
-        });
+                try {
+                    DataGetter.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-        down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
-                snackbar.show();
             }
         });
 
@@ -122,6 +138,24 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "LEFT", Snackbar.LENGTH_LONG);
                 snackbar.show();
+                try {
+                    DataGetter.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
+                snackbar.show();
+                try {
+                    DataGetter.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -130,6 +164,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "RIGHT", Snackbar.LENGTH_LONG);
                 snackbar.show();
+                try {
+                    DataGetter.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
