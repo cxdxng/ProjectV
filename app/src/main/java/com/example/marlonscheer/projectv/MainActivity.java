@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 if (realuname==username && realpasswd==passwd) {
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(i);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+
                 }else {
                     Snackbar snackbar = Snackbar.make(view, "Wrong Login Credentials, Try again", Snackbar.LENGTH_LONG);
                     snackbar.show();
