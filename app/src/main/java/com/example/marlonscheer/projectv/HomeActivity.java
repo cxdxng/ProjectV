@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
@@ -44,6 +45,10 @@ import java.util.Date;
 public class HomeActivity extends AppCompatActivity {
 
     WebView wv;
+    ImageView up;
+    ImageView down;
+    ImageView left;
+    ImageView right;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +57,9 @@ public class HomeActivity extends AppCompatActivity {
 
         wv = (WebView) findViewById(R.id.webView);
 
-        wv.loadUrl("https://github.com");
+        wv.loadUrl("http://192.168.88.89/cam");
+        wv.setScrollContainer(false);
+
         RelativeLayout v = (RelativeLayout)  findViewById(R.id.nav);
 
         TextView s = (TextView) v.findViewById(R.id.date_text);
@@ -66,6 +73,44 @@ public class HomeActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
 
         s.setText(dateFormat.format(cal.getTime()) );
+
+
+        up = (ImageView) findViewById(R.id.arrowUp);
+        down = (ImageView) findViewById(R.id.arrowDown);
+        left = (ImageView) findViewById(R.id.arrowLeft);
+        right = (ImageView) findViewById(R.id.arrowRight);
+
+        up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(view, "UP", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
+        down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(view, "LEFT", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(view, "RIGHT", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
 
 
 
