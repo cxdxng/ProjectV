@@ -92,7 +92,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    DataGetter.in.close();
                     DataGetter.socket.close();
+                    finish();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

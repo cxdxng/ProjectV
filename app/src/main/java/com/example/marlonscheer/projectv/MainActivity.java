@@ -43,9 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (username.equals(realuname) && passwd.equals(realpasswd)) {
+                    DataGetter dg = new DataGetter();
+                    dg.execute();
+                    Log.d("lul ul", dg.getBytesString());
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(i);
-                    Log.d("lulul", String.valueOf(new DataGetter().execute()));
+
+
                     overridePendingTransition(R.anim.enter, R.anim.exit);
 
                 }else {
