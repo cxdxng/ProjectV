@@ -34,6 +34,7 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,6 +47,7 @@ import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
 
+    Button exit;
     WebView wv;
     ImageView up;
     ImageView down;
@@ -58,6 +60,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         wv = (WebView) findViewById(R.id.webView);
+        exit = (Button) findViewById(R.id.buttonExit);
+
 
         wv.loadUrl("http://192.168.88.89/cam");
 
@@ -83,6 +87,17 @@ public class HomeActivity extends AppCompatActivity {
         down = (ImageView) findViewById(R.id.arrowDown);
         left = (ImageView) findViewById(R.id.arrowLeft);
         right = (ImageView) findViewById(R.id.arrowRight);
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    DataGetter.socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         up.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,12 +11,13 @@ public class DataGetter extends AsyncTask<Void, Void, String> {
     private static final int port = 6232;
     private static final String host = "192.168.88.207";
     private static final byte[] bytes = null;
+    public static Socket socket;
 
 
     @Override
     protected String doInBackground(Void... voids) {
         try {
-            Socket socket = new Socket(host, port);
+            socket = new Socket(host, port);
             socket.getOutputStream().write("3001".getBytes(Charset.defaultCharset()));
             InputStream in = socket.getInputStream();
             byte[] bytes = new byte[in.available()];

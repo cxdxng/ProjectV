@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support:design:23.1.1'
     implementation 'com.google.firebase:firebase-ml-vision:19.0.2'
     implementation 'com.google.firebase:firebase-ml-vision-face-model:17.0.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
