@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.concurrent.ExecutionException;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText uname;
@@ -43,9 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (username.equals(realuname) && passwd.equals(realpasswd)) {
-                    DataGetter dg = new DataGetter();
-                    dg.execute();
-                    Log.d("lul ul", dg.getBytesString());
+                    new Thread(new Runnable() {
+                        public void run() {
+                            DataGetter dg = new DataGetter();
+                            try {
+                                Log.d("lulul","adsas" +  dg.execute().get());
+                            } catch (ExecutionException e) {
+                                e.printStackTrace();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(i);
 
