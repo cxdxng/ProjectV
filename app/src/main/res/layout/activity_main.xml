@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTextPass"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="278dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="297dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="214dp"
+        android:layout_marginTop="206dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -48,7 +49,7 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="135dp"
+        android:layout_marginBottom="161dp"
         android:text="Login" />
 
     <ImageView
@@ -57,17 +58,23 @@
         android:layout_height="216dp"
         android:layout_alignTop="@+id/textViewLogin"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="254dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         app:srcCompat="@drawable/round1" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="85dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="82dp"
         android:text="Noch keinen Account? Kein Problem, werden sie noch heute ihrer Privatsphäre beraubt. Hier Registrieren!"
         android:textAlignment="center"
         android:textColor="#000" />
@@ -78,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="30dp"
         android:text="Registrieren" />
 
 </RelativeLayout>
