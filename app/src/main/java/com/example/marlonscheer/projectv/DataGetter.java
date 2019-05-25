@@ -1,6 +1,7 @@
 package com.example.marlonscheer.projectv;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.util.Log;
 
 import java.io.IOException;
@@ -21,15 +22,24 @@ public class DataGetter extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... voids) {
-        try {
-            socket = new Socket(host, port);
-            socket.getOutputStream().write("3001".getBytes(Charset.defaultCharset()));
-            in = socket.getInputStream();
-            byte[] bytes = new byte[in.available()];
-            in.read(bytes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                // yourMethod();
+                try {
+                    socket = new Socket(host, port);
+
+                socket.getOutputStream().write("3001".getBytes(Charset.defaultCharset()));
+                in = socket.getInputStream();
+                byte[] bytes = new byte[in.available()];
+
+                in.read(bytes);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 5000);   //5 seconds
+
         return new String(bytes);
     }
 }
