@@ -101,17 +101,6 @@
         android:textColor="#FFF"
         android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView2"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="150dp"
-        android:text="JEDOCH"
-        android:textColor="#FFF"
-        android:textSize="30sp" />
-
 
     <TextView
         android:id="@+id/textView"
@@ -134,7 +123,7 @@
     android:layout_marginTop="200dp"
     android:textAlignment="center"
 
-    android:text="BIETEN WIR IHNEN AB HEUTE EINEN 120 PROZENTIGEN AUFSCHLAG IM PREIS. LOHNENSWERTER WAR ES NOCH NIE. KAUFEN SIE JETZT MIT EINEM AUFSCHLAG VON 50 PROZENT FÜR UNSERE GUTEN DIENSTE. "
+    android:text="Extra Gebühren: Da sie unser Produkt sehr schätzen verlangen wir diesen Monat +20 Prozent Gebühren. "
     android:textColor="#FFF"
     android:textSize="20sp" />
 
