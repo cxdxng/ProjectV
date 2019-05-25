@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ConstraingLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
 
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="100dp"
     android:layout_alignParentBottom="true"
     android:background="@drawable/round"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/buttonExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="17dp"
-        android:text="Datum/Zeit:"
-        android:textColor="#fff"
-        android:textSize="30sp" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="411dp"
+        android:text="Close Socket" />
 
     <TextView
         android:id="@+id/date_text"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="195dp"
-        android:layout_marginBottom="7dp"
-        android:text="TextView"
+        android:layout_alignParentStart="false"
+        android:layout_centerVertical="true"
+        android:text="Sensoren"
         android:textColor="#fff"
-        android:textSize="20sp" />
+        android:textSize="36sp" />
 
 
-
-</RelativeLayout>
+</ConstraingLayout>
