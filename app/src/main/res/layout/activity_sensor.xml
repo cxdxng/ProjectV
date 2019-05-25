@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
-        android:text="Luftfeuchtigkeits:"
+        android:text="Humidity-Sensor:"
         android:textColor="#000"
         android:textSize="30sp" />
 
@@ -23,6 +23,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="250dp"
         android:layout_marginTop="60dp"
+        android:text="TextView"
+        android:textColor="#000"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="68dp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="110dp"
+        android:text="Humidity-Sensor:"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="110dp"
         android:text="TextView"
         android:textColor="#000"
         android:textSize="30sp"
