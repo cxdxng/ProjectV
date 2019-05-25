@@ -41,6 +41,8 @@ import java.util.Calendar;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -57,7 +59,8 @@ public class HomeActivity extends AppCompatActivity {
 
         wv = (WebView) findViewById(R.id.webView);
 
-        wv.loadUrl("http://192.168.88.89/cam");
+
+
         wv.setScrollContainer(false);
 
         RelativeLayout v = (RelativeLayout)  findViewById(R.id.nav);
@@ -111,9 +114,6 @@ public class HomeActivity extends AppCompatActivity {
                 snackbar.show();
             }
         });
-
-
-
 
     }
 }
