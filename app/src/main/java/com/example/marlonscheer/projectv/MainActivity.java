@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText uname;
@@ -24,18 +26,35 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.buttonLogin);
 
 
-        String uname = "realaxelvoss";
-        String passwd = "dsgvo";
-
+        final String username = "realaxelvoss";
+        final String passwd = "dsgvo";
 
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(i);
+
+                String realuname = uname.getText().toString();
+                String realpasswd = pass.getText().toString();
+
+
+                if (realuname==username && realpasswd==passwd) {
+                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(i);
+                }else {
+                    Snackbar snackbar = Snackbar.make(view, "Wrong Login Credentials, Try again", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
             }
         });
+
+
+
+    }
+
+    public void test()
+    {
+
 
 
 
