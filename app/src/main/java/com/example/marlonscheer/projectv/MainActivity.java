@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     EditText uname;
     EditText pass;
     Button login;
+    public String username;
+    public String passwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.buttonLogin);
 
 
-        final String username = "realaxelvoss";
-        final String passwd = "dsgvo";
+        username = "axelvoss";
+        passwd = "dsgvo";
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 String realpasswd = pass.getText().toString();
 
 
-                if (realuname==username && realpasswd==passwd) {
+                if (username.equals(realuname) && passwd.equals(realpasswd)) {
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.enter, R.anim.exit);
