@@ -59,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
 
         wv = (WebView) findViewById(R.id.webView);
 
+        wv.loadUrl("http://192.168.88.89/cam");
 
 
         wv.setScrollContainer(false);

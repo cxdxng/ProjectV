@@ -45,12 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 if (username.equals(realuname) && passwd.equals(realpasswd)) {
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(i);
+                    Log.d("lulul", String.valueOf(new DataGetter().execute()));
                     overridePendingTransition(R.anim.enter, R.anim.exit);
 
                 }else {
                     Snackbar snackbar = Snackbar.make(view, "Wrong Login Credentials, Try again", Snackbar.LENGTH_LONG);
                     snackbar.show();
-                    Log.d("lulul", DataGetter.getData());
+
                 }
             }
         });
