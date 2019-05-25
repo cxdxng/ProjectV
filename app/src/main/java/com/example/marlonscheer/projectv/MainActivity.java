@@ -47,14 +47,9 @@ public class MainActivity extends AppCompatActivity {
                 if (username.equals(realuname) && passwd.equals(realpasswd)) {
                     new Thread(new Runnable() {
                         public void run() {
-                            DataGetter dg = new DataGetter();
-                            try {
-                                Log.d("lulul","adsas" +  dg.execute().get());
-                            } catch (ExecutionException e) {
-                                e.printStackTrace();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                          DataGetter dg = new DataGetter();
+                          dg.execute();
+
                         }
                     }).start();
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
