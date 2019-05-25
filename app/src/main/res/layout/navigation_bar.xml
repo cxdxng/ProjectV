@@ -18,7 +18,7 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="17dp"
         android:text="Datum/Zeit:"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="30sp" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_marginStart="223dp"
         android:layout_marginBottom="0dp"
         android:text="TextView"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="30sp" />
 
 </RelativeLayout>
