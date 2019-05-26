@@ -16,16 +16,19 @@ android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
 
 
-        android:text="Close Socket" />
+        android:text="Close Socket"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="26dp" />
 
     <TextView
         android:id="@+id/date_text"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
-    android:layout_marginEnd="100dp"
         android:text="Sensoren"
         android:textColor="#fff"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="26dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
