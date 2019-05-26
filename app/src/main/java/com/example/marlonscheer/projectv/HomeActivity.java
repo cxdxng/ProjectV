@@ -24,6 +24,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import static com.example.marlonscheer.projectv.MainActivity.dg;
+
 public class HomeActivity extends AppCompatActivity {
 
     Button exit;
@@ -61,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
                 try {
                     //Fetching Data
                     ConnEstablisher.in.close();
-                    ConnEstablisher.socket.close();
+                   // ConnEstablisher.socket.close();
                     finish();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -84,11 +86,34 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "UP Pressed", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "21", Snackbar.LENGTH_LONG);
                     snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("21".getBytes(Charset.defaultCharset()));
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "Up Released", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "22", Snackbar.LENGTH_LONG);
                     snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("22".getBytes(Charset.defaultCharset()));
+
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 }
 return true;
             }
@@ -97,10 +122,33 @@ return true;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "Down Pressed", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "41", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("41".getBytes(Charset.defaultCharset()));
 
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "Down Released", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "42", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("42".getBytes(Charset.defaultCharset()));
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 }
                 return true;
             }
@@ -109,9 +157,33 @@ return true;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "Left Pressed", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "31", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("31".getBytes(Charset.defaultCharset()));
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "Left Released", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "32", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("32".getBytes(Charset.defaultCharset()));
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 }
                 return true;
             }
@@ -120,9 +192,33 @@ return true;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "Right Pressed", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "51", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("51".getBytes(Charset.defaultCharset()));
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "Right Released", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "52", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                dg.socket.getOutputStream().write("52".getBytes(Charset.defaultCharset()));
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
                 }
                 return true;
             }

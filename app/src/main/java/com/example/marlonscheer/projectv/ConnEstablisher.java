@@ -14,7 +14,7 @@ public class ConnEstablisher extends AsyncTask<Void, Void, String> {
     private static final int port = 6232;
     private static final String host = "192.168.88.207";
     static List<byte[]> list = new ArrayList<>();
-    public static Socket socket;
+    public Socket socket;
     public static InputStream in;
 
 
