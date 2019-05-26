@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -32,21 +33,20 @@ public class HomeActivity extends AppCompatActivity {
     ImageView left;
     ImageView right;
     TextView s;
-    RelativeLayout v;
-    @SuppressLint("ClickableViewAccessibility")
+   ConstraintLayout v;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         //get current date time with Date() and Date
-        @SuppressLint("SimpleDateFormat") DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+      DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         Calendar cal = Calendar.getInstance();
-        s.setText(dateFormat.format(cal.getTime()) );
 
         //Initializing ImageView's  and Remaining
-        v = (RelativeLayout)  findViewById(R.id.nav);
+        v = (ConstraintLayout)  findViewById(R.id.nav);
         s = (TextView) v.findViewById(R.id.date_text);
         wv = (WebView) findViewById(R.id.webView);
         exit = (Button) findViewById(R.id.buttonExit);
@@ -68,6 +68,10 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        s.setText(dateFormat.format(cal.getTime()) );
+
 
         //Setting Webview for showing camera data
         wv.loadUrl("http://192.168.88.89/cam");

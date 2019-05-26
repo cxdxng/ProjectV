@@ -22,11 +22,14 @@ public class SensorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensor);
-
+//initiaise TextViews
         heat = (TextView) findViewById(R.id.Waerme);
         humid = (TextView) findViewById(R.id.humidity);
         gas = (TextView) findViewById(R.id.ultra);
         ultra = (TextView) findViewById(R.id.gas);
+
+
+
 
 
     }
