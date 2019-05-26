@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageView left;
     ImageView right;
     TextView s;
-   ConstraintLayout v;
+   RelativeLayout v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +48,8 @@ public class HomeActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
 
         //Initializing ImageView's  and Remaining
-        v = (ConstraintLayout)  findViewById(R.id.nav);
-        s = (TextView) v.findViewById(R.id.date_text);
+        v = (RelativeLayout)  findViewById(R.id.nav);
+       // s = (TextView) v.findViewById(R.id.date_text);
         wv = (WebView) findViewById(R.id.webView);
         exit = (Button) findViewById(R.id.buttonExit);
         up = (ImageView) findViewById(R.id.arrowUp);
@@ -72,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        s.setText(dateFormat.format(cal.getTime()) );
+   //     s.setText(dateFormat.format(cal.getTime()) );
 
 
         //Setting Webview for showing camera data
