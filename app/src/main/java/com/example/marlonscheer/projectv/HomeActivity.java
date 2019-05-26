@@ -86,13 +86,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "21 2", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "21", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
                                 dg.socket.getOutputStream().write("21".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -100,13 +100,13 @@ public class HomeActivity extends AppCompatActivity {
                         }
                     }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "22 2", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "22", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
                                 dg.socket.getOutputStream().write("22".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
+
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -122,13 +122,13 @@ return true;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "21 3", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "41", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                dg.socket.getOutputStream().write("21".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
+                                dg.socket.getOutputStream().write("41".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -136,13 +136,13 @@ return true;
                         }
                     }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "22 3", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "42", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                dg.socket.getOutputStream().write("22".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
+                                dg.socket.getOutputStream().write("42".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -157,13 +157,13 @@ return true;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "21 4", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "31", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                dg.socket.getOutputStream().write("21".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
+                                dg.socket.getOutputStream().write("31".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -171,13 +171,13 @@ return true;
                         }
                     }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "22 4", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "32", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                dg.socket.getOutputStream().write("22".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
+                                dg.socket.getOutputStream().write("32".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -192,13 +192,13 @@ return true;
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Snackbar snackbar = Snackbar.make(v, "21 5", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "51", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                dg.socket.getOutputStream().write("21".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
+                                dg.socket.getOutputStream().write("51".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -206,13 +206,13 @@ return true;
                         }
                     }).start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    Snackbar snackbar = Snackbar.make(v, "22 5", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(v, "52", Snackbar.LENGTH_LONG);
                     snackbar.show();
                     new Thread(new Runnable() {
                         public void run() {
                             try {
-                                dg.socket.getOutputStream().write("22".getBytes(Charset.defaultCharset()));
-                                dg.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
+                                dg.socket.getOutputStream().write("52".getBytes(Charset.defaultCharset()));
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
