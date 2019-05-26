@@ -98,6 +98,7 @@ return true;
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     Snackbar snackbar = Snackbar.make(v, "Down Pressed", Snackbar.LENGTH_LONG);
+
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     Snackbar snackbar = Snackbar.make(v, "Down Released", Snackbar.LENGTH_LONG);
                 }
