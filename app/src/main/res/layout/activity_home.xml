@@ -37,8 +37,9 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        app:srcCompat="@mipmap/arrowup"
+        android:layout_marginTop="291dp"
+        app:srcCompat="@mipmap/arrowleft"
+        android:layout_marginStart="10dp"
         tools:layout_editor_absoluteX="83dp"
         tools:layout_editor_absoluteY="201dp" />
 
