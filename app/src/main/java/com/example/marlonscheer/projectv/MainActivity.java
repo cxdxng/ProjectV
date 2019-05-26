@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button login;
     public String username;
     public String passwd;
+    public static ConnEstablisher dg = new ConnEstablisher();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 if (username.equals(realuname) && passwd.equals(realpasswd)) {
                     new Thread(new Runnable() {
                         public void run() {
-                          DataGetter dg = new DataGetter();
                           dg.execute();
 
                         }

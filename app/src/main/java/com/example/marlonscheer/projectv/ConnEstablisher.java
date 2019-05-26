@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataGetter extends AsyncTask<Void, Void, String> {
+public class ConnEstablisher extends AsyncTask<Void, Void, String> {
     private static final int port = 6232;
     private static final String host = "192.168.88.207";
     static List<byte[]> list = new ArrayList<>();
@@ -24,9 +24,6 @@ public class DataGetter extends AsyncTask<Void, Void, String> {
             socket = new Socket(host, port);
             socket.getOutputStream().write("3001".getBytes(Charset.defaultCharset()));
             in = socket.getInputStream();
-            byte[] bytes = new byte[in.available()];
-            in.read(bytes);
-            list.add(bytes);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,15 +1,11 @@
-//Project created on Friday the 26.05.19 at Jugendhackt Köln.
-
 package com.example.marlonscheer.projectv;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,22 +28,21 @@ public class HomeActivity extends AppCompatActivity {
     ImageView left;
     ImageView right;
     TextView s;
-    RelativeLayout v;
-    @SuppressLint("ClickableViewAccessibility")
+   // RelativeLayout v;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         //get current date time with Date() and Date
-        @SuppressLint("SimpleDateFormat") DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         Calendar cal = Calendar.getInstance();
         s.setText(dateFormat.format(cal.getTime()) );
 
         //Initializing ImageView's  and Remaining
-        v = (RelativeLayout)  findViewById(R.id.nav);
-        s = (TextView) v.findViewById(R.id.date_text);
+        //v = (RelativeLayout)  findViewById(R.id.nav);
+        //s = (TextView) v.findViewById(R.id.date_text);
         wv = (WebView) findViewById(R.id.webView);
         exit = (Button) findViewById(R.id.buttonExit);
         up = (ImageView) findViewById(R.id.arrowUp);
@@ -60,8 +55,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     //Fetching Data
-                    DataGetter.in.close();
-                    DataGetter.socket.close();
+                    MainActivity.dg.in.close();
+                    MainActivity.dg.socket.close();
                     finish();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -87,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "UP", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -101,7 +96,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "LEFT", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -114,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -127,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "RIGHT", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
