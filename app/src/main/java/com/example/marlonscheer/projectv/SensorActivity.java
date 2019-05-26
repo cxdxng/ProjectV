@@ -2,6 +2,7 @@ package com.example.marlonscheer.projectv;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,14 @@ public class SensorActivity extends AppCompatActivity {
         ultra = (TextView) findViewById(R.id.gas);
 
 
+        heat.setText("22°C");
+        heat.setTextColor(Color.GREEN);
+
+        humid.setText("40%");
+
+        gas.setText("No Gas Detected");
+
+        ultra.setText("2000 mm");
 
 
 
