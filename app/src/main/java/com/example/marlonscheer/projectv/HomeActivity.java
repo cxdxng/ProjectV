@@ -3,6 +3,7 @@
 package com.example.marlonscheer.projectv;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -48,8 +49,8 @@ public class HomeActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
 
         //Initializing ImageView's  and Remaining
-        v = (RelativeLayout)  findViewById(R.id.nav);
-       // s = (TextView) v.findViewById(R.id.date_text);
+        v = (RelativeLayout) findViewById(R.id.nav);
+        //s = (TextView) v.findViewById(R.id.date_text);
         wv = (WebView) findViewById(R.id.webView);
         exit = (Button) findViewById(R.id.buttonExit);
         up = (ImageView) findViewById(R.id.arrowUp);
@@ -60,19 +61,16 @@ public class HomeActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
                     //Fetching Data
-                    ConnEstablisher.in.close();
-                   // ConnEstablisher.socket.close();
-                    finish();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    Intent i = new Intent(HomeActivity.this, SensorActivity.class);
+                    startActivity(i);
+                    
+
             }
         });
 
 
-   //     s.setText(dateFormat.format(cal.getTime()) );
+       // s.setText(dateFormat.format(cal.getTime()) );
 
 
         //Setting Webview for showing camera data
