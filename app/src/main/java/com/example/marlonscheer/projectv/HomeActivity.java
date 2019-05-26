@@ -80,65 +80,53 @@ public class HomeActivity extends AppCompatActivity {
 
         //Up, Down, Left, Right, WebView and ImageViews for controlling Camera through socket from Baran our teammate
 
-        up.setOnClickListener(new View.OnClickListener() {
+        up.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(view, "UP", Snackbar.LENGTH_LONG);
-                snackbar.show();
-               /* try {
-                    ConnEstablisher.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
-                } catch (IOException e) {
-                    e.printStackTrace();
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Snackbar snackbar = Snackbar.make(v, "UP Pressed", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Snackbar snackbar = Snackbar.make(v, "Up Released", Snackbar.LENGTH_LONG);
+                    snackbar.show();
                 }
-                */
-
+return true;
+            }
+        });
+        down.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Snackbar snackbar = Snackbar.make(v, "Down Pressed", Snackbar.LENGTH_LONG);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Snackbar snackbar = Snackbar.make(v, "Down Released", Snackbar.LENGTH_LONG);
+                }
+                return true;
+            }
+        });
+        left.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Snackbar snackbar = Snackbar.make(v, "Left Pressed", Snackbar.LENGTH_LONG);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Snackbar snackbar = Snackbar.make(v, "Left Released", Snackbar.LENGTH_LONG);
+                }
+                return true;
+            }
+        });
+        right.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Snackbar snackbar = Snackbar.make(v, "Right Pressed", Snackbar.LENGTH_LONG);
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Snackbar snackbar = Snackbar.make(v, "Right Released", Snackbar.LENGTH_LONG);
+                }
+                return true;
             }
         });
 
-        left.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(view, "LEFT", Snackbar.LENGTH_LONG);
-                snackbar.show();
-
-               /* try {
-                    ConnEstablisher.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                */
-            }
-        });
-
-        down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
-                snackbar.show();
-              /*  try {
-                    ConnEstablisher.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                */
-            }
-        });
-
-        right.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(view, "RIGHT", Snackbar.LENGTH_LONG);
-                snackbar.show();
-               /* try {
-                    ConnEstablisher.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                */
-            }
-        });
 
     }
 }
