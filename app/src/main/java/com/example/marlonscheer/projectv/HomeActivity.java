@@ -85,11 +85,12 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "UP", Snackbar.LENGTH_LONG);
                 snackbar.show();
-                try {
+               /* try {
                     ConnEstablisher.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                */
 
             }
         });
@@ -99,11 +100,14 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "LEFT", Snackbar.LENGTH_LONG);
                 snackbar.show();
-                try {
+
+               /* try {
                     ConnEstablisher.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                */
             }
         });
 
@@ -112,11 +116,12 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
                 snackbar.show();
-                try {
+              /*  try {
                     ConnEstablisher.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                */
             }
         });
 
@@ -125,11 +130,13 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "RIGHT", Snackbar.LENGTH_LONG);
                 snackbar.show();
-                try {
+               /* try {
                     ConnEstablisher.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                */
             }
         });
 
