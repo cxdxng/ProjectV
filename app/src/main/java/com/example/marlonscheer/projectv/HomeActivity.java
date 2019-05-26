@@ -116,12 +116,16 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
                 snackbar.show();
-              /*  try {
-                    ConnEstablisher.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                */
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                ConnEstablisher.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }).start();
             }
         });
 
