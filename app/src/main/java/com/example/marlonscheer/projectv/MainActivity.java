@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         username = "axelvoss";
-        passwd = "dsgvo";
+        passwd = "artikel13";
 
 
         login.setOnClickListener(new View.OnClickListener() {

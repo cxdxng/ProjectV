@@ -1,5 +1,8 @@
+//Project created on Friday the 26.05.19 at Jugendhackt Köln.
+
 package com.example.marlonscheer.projectv;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,59 +31,35 @@ public class HomeActivity extends AppCompatActivity {
     ImageView down;
     ImageView left;
     ImageView right;
-
+    TextView s;
+    RelativeLayout v;
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        wv = (WebView) findViewById(R.id.webView);
-        exit = (Button) findViewById(R.id.buttonExit);
-
-
-        wv.loadUrl("http://192.168.88.89/cam");
-
-        wv.setScrollContainer(true);
-
-//Only hide the scrollbar, not disables the scrolling:
-        wv.setVerticalScrollBarEnabled(false);
-       // wv.setHorizontalScrollBarEnabled(true);
-
-//Only disabled the horizontal scrolling:
-      //  wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-
-//To disabled the horizontal and vertical scrolling:
-       wv.setOnTouchListener(new View.OnTouchListener() {
-            public boolean onTouch(View v, MotionEvent event) {
-                return (event.getAction() == MotionEvent.ACTION_MOVE);
-            }
-        });
-
-
-        RelativeLayout v = (RelativeLayout)  findViewById(R.id.nav);
-
-        TextView s = (TextView) v.findViewById(R.id.date_text);
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        //get current date time with Date()
+        //get current date time with Date() and Date
+        @SuppressLint("SimpleDateFormat") DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
-
-
-        //get current date time with Calendar()
         Calendar cal = Calendar.getInstance();
-
         s.setText(dateFormat.format(cal.getTime()) );
 
-
+        //Initializing ImageView's  and Remaining
+        v = (RelativeLayout)  findViewById(R.id.nav);
+        s = (TextView) v.findViewById(R.id.date_text);
+        wv = (WebView) findViewById(R.id.webView);
+        exit = (Button) findViewById(R.id.buttonExit);
         up = (ImageView) findViewById(R.id.arrowUp);
         down = (ImageView) findViewById(R.id.arrowDown);
         left = (ImageView) findViewById(R.id.arrowLeft);
         right = (ImageView) findViewById(R.id.arrowRight);
-
+        //Exit Button for closing socket by destroying Activity
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
+                    //Fetching Data
                     DataGetter.in.close();
                     DataGetter.socket.close();
                     finish();
@@ -90,7 +69,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //Setting Webview for showing camera data
+        wv.loadUrl("http://192.168.88.89/cam");
+        wv.setScrollContainer(true);
+        wv.setVerticalScrollBarEnabled(false);
 
+        //Up, Down, Left, Right, WebView and ImageViews for controlling Camera through socket from Baran our teammate
+        wv.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return (event.getAction() == MotionEvent.ACTION_MOVE);
+            }
+        });
 
         up.setOnClickListener(new View.OnClickListener() {
             @Override
