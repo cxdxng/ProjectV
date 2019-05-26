@@ -15,14 +15,14 @@ android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="311dp"
+
         android:text="Close Socket" />
- 
+
     <TextView
         android:id="@+id/date_text"
         android:layout_width="205dp"
         android:layout_height="wrap_content"
-
+        android:layout_alignParentTop="true"
    android:layout_marginEnd="100dp"
         android:text="Sensoren"
         android:textColor="#fff"
