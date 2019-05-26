@@ -103,6 +103,8 @@ public class HomeActivity extends AppCompatActivity {
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     Snackbar snackbar = Snackbar.make(v, "22", Snackbar.LENGTH_LONG);
                     snackbar.show();
+                    up.setImageDrawable(getDrawable(R.mipmap.arrowup));
+
                     new Thread(new Runnable() {
                         public void run() {
                             try {
@@ -129,7 +131,7 @@ return true;
                         public void run() {
                             try {
                                 dg.socket.getOutputStream().write("41".getBytes(Charset.defaultCharset()));
-                                up.setImageDrawable(getDrawable(R.mipmap.arrowdowngreen));
+                                down.setImageDrawable(getDrawable(R.mipmap.arrowdowngreen));
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -140,6 +142,8 @@ return true;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     Snackbar snackbar = Snackbar.make(v, "42", Snackbar.LENGTH_LONG);
                     snackbar.show();
+                    down.setImageDrawable(getDrawable(R.mipmap.arrowdown));
+
                     new Thread(new Runnable() {
                         public void run() {
                             try {
@@ -161,7 +165,7 @@ return true;
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     Snackbar snackbar = Snackbar.make(v, "31", Snackbar.LENGTH_LONG);
                     snackbar.show();
-                    up.setImageDrawable(getDrawable(R.mipmap.arrowleftgreen));
+                    left.setImageDrawable(getDrawable(R.mipmap.arrowleftgreen));
                     new Thread(new Runnable() {
                         public void run() {
                             try {
@@ -176,6 +180,7 @@ return true;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     Snackbar snackbar = Snackbar.make(v, "32", Snackbar.LENGTH_LONG);
                     snackbar.show();
+                    left.setImageDrawable(getDrawable(R.mipmap.arrowleft));
                     new Thread(new Runnable() {
                         public void run() {
                             try {
@@ -197,7 +202,7 @@ return true;
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     Snackbar snackbar = Snackbar.make(v, "51", Snackbar.LENGTH_LONG);
                     snackbar.show();
-                    up.setImageDrawable(getDrawable(R.mipmap.arrowrightgreen));
+                    right.setImageDrawable(getDrawable(R.mipmap.arrowrightgreen));
                     new Thread(new Runnable() {
                         public void run() {
                             try {
@@ -212,6 +217,8 @@ return true;
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     Snackbar snackbar = Snackbar.make(v, "52", Snackbar.LENGTH_LONG);
                     snackbar.show();
+                    right.setImageDrawable(getDrawable(R.mipmap.arrowright));
+
                     new Thread(new Runnable() {
                         public void run() {
                             try {
