@@ -76,14 +76,9 @@ public class HomeActivity extends AppCompatActivity {
         //Setting Webview for showing camera data
         wv.loadUrl("http://192.168.88.89/cam");
         wv.setScrollContainer(true);
-        wv.setVerticalScrollBarEnabled(false);
+        wv.setVerticalScrollBarEnabled(true);
 
         //Up, Down, Left, Right, WebView and ImageViews for controlling Camera through socket from Baran our teammate
-        wv.setOnTouchListener(new View.OnTouchListener() {
-            public boolean onTouch(View v, MotionEvent event) {
-                return (event.getAction() == MotionEvent.ACTION_MOVE);
-            }
-        });
 
         up.setOnClickListener(new View.OnClickListener() {
             @Override

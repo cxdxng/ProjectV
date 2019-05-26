@@ -11,12 +11,12 @@
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:scaleX="10"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
+
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
 
 
-  android:layout_alignParentTop="true"/>
+        android:scrollbars="horizontal" />
 
     <include layout="@layout/navigation_bar"></include>
 
@@ -35,13 +35,11 @@
         android:id="@+id/arrowLeft"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+
         android:layout_marginTop="291dp"
         app:srcCompat="@mipmap/arrowleft"
-        android:layout_marginStart="10dp"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="201dp" />
+        android:layout_marginStart="20dp"
+      />
 
     <ImageView
         android:id="@+id/arrowDown"
