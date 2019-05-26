@@ -60,8 +60,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     //Fetching Data
-                    DataGetter.in.close();
-                    DataGetter.socket.close();
+                    ConnEstablisher.in.close();
+                    ConnEstablisher.socket.close();
                     finish();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -91,7 +91,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "UP", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("2".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "LEFT", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("3".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -118,7 +118,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "DOWN", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("4".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -131,7 +131,7 @@ public class HomeActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "RIGHT", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 try {
-                    DataGetter.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
+                    ConnEstablisher.socket.getOutputStream().write("5".getBytes(Charset.defaultCharset()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
